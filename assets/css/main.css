@@ -1080,27 +1080,3 @@ input, select, textarea {
 		#header nav {
 			padding: 0 1em;
 		} }
-
-		#experience {
-			padding: 2em 0;
-			background: _palette(bg); // Use the same background color
-			color: _palette(fg); // Use the same foreground color
-		
-			h2 {
-				font-size: 2em;
-				margin-bottom: 1em;
-			}
-		
-			.experience-item {
-				margin-bottom: 1.5em;
-		
-				h3 {
-					font-size: 1.5em;
-					margin-bottom: 0.5em;
-				}
-		
-				p {
-					margin: 0.5em 0;
-				}
-			}
-		}
