@@ -72,6 +72,35 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Navigation Bar */
+#nav {
+    background-color: #007acc;
+    padding: 1em 0;
+    text-align: center;
+}
+
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#nav ul li {
+    margin: 0 1em;
+}
+
+#nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+#nav ul li a:hover {
+    color: #ffdd57;
+}
 
 /* Basic */
 
@@ -385,6 +414,20 @@ input, select, textarea {
 			width: 1px;
 		}
 
+/* Main Sections */
+.main {
+	padding: 5em 0;
+	text-align: center;
+	background: #fff;
+	color: #000;
+}
+
+.main h2 {
+	font-size: 2.5em;
+	margin-bottom: 0.5em;
+}
+
+
 /* Header */
 
 	@-moz-keyframes header {
@@ -687,28 +730,39 @@ input, select, textarea {
 					width: 2.5em;
 				}
 
-				#header nav a:hover {
-					font-size: 1.1em;
-				}
+/* Top Navigation */
+#top-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.133); /* Semi-transparent background */
+    padding: 1em 0;
+    z-index: 1000;
+}
 
-					#header nav a:hover:before {
-						background-color: rgba(255, 255, 255, 0.175);
-						color: #fff;
-					}
+#top-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-				#header nav a:active {
-					font-size: 0.95em;
-					background: none;
-				}
+#top-nav ul li {
+    margin: 0 1em;
+}
 
-					#header nav a:active:before {
-						background-color: rgba(255, 255, 255, 0.35);
-						color: #fff;
-					}
+#top-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
 
-				#header nav a span {
-					display: none;
-				}
+#top-nav ul li a:hover {
+    color: #3498db; /* Adjust hover color if needed */
+}
+
 
 /* Footer */
 
@@ -726,6 +780,34 @@ input, select, textarea {
 		text-align: center;
 		width: 100%;
 	}
+
+/* Footer */
+#footer {
+	background-color: #007acc;
+	color: #fff;
+	text-align: center;
+	padding: 2em 0;
+	position: relative;
+	width: 100%;
+}
+
+#footer .icons {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+}
+
+#footer .icons li {
+	margin: 0 1em;
+}
+
+#footer .icons li a {
+	color: #fff;
+	font-size: 1.5em;
+	text-decoration: none;
+}
 
 /* Wide */
 
@@ -1081,26 +1163,4 @@ input, select, textarea {
 			padding: 0 1em;
 		} }
 
-		#experience {
-			padding: 2em 0;
-			background: _palette(bg); // Use the same background color
-			color: _palette(fg); // Use the same foreground color
 		
-			h2 {
-				font-size: 2em;
-				margin-bottom: 1em;
-			}
-		
-			.experience-item {
-				margin-bottom: 1.5em;
-		
-				h3 {
-					font-size: 1.5em;
-					margin-bottom: 0.5em;
-				}
-		
-				p {
-					margin: 0.5em 0;
-				}
-			}
-		}
