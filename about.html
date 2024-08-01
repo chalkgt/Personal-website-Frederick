@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Frederick Arne Goh</title>
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      .typing-animation {
+        font-family: monospace;
+        white-space: pre-wrap; /* Ensure text wraps and maintains line breaks */
+        overflow: hidden;
+        border-right: 0.15em solid orange;
+        display: inline-block;
+        animation: blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: rgb(252, 252, 250); }
+      }
+
+      .blue-box {
+        max-width: 1200px; /* Set a max-width for the text container */
+        margin: 0 auto; /* Center the container */
+        padding: 20px;
+        text-align: left; /* Align text to the left */
+      }
+
+      h2 {
+        font-size: 2.5em; /* Increase the font size of the heading */
+      }
+    </style>
   </head>
   <body>
     <div id="wrapper">
@@ -14,7 +40,7 @@
         <!-- Top Navigation -->
         <nav id="top-nav">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -32,98 +58,25 @@
             <h2>About Me</h2>
           </header>
           <div class="blue-box">
-            <p>
-              Hello! I'm Frederick Arne Goh, a Product Manager at Headstarter AI
-              with a passion for anime. I love exploring new technologies and
-              bringing innovative ideas to life.
+            <p class="typing-animation" id="typing-text">
+              Hi! I’m Frederick Goh, currently studying Data Science at the University of California, Berkeley.
+
+              I’m passionate about AI, Product Management, and creating innovative solutions that make a real impact. This summer, I'm interning as a Product Manager at Kollegio AI, an AI-powered college counseling platform.
+              
+              Born in the United States and raised in Indonesia, I value diversity and love connecting with people from all cultures to share resources, journeys, and celebrate wins together. Recently, I co-founded the Berkeley Summer Community with @Tom Lam. which has grown to over 230+ members in just a month.
+              
+              In my free time, I enjoy basketball, hiking, gym, exploring cities, and coffee chats/study while listening to music.
             </p>
           </div>
 
-          <nav>
-            <ul>
-              <li>
-                <a href="#" class="icon brands fa-twitter"
-                  ><span class="label">Twitter</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-facebook-f"
-                  ><span class="label">Facebook</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/frederickarnegoh/"
-                  class="icon brands fa-linkedin"
-                  ><span class="label">LinkedIn</span></a
-                >
-              </li>
-              <li>
-                <a href="#" class="icon brands fa-dribbble"
-                  ><span class="label">Dribbble</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/chalkgt"
-                  class="icon brands fa-github"
-                  ><span class="label">Github</span></a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:freddygoh21@berkeley.edu"
-                  class="icon solid fa-envelope"
-                  ><span class="label">Email</span></a
-                >
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <section id="about" class="main special"></section>
-        <footer id="footer">
-          <ul class="icons">
-            <li>
-              <a href="#" class="icon brands fa-twitter"
-                ><span class="label">Twitter</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-facebook-f"
-                ><span class="label">Facebook</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/frederickarnegoh/"
-                class="icon brands fa-linkedin"
-                ><span class="label">LinkedIn</span></a
-              >
-            </li>
-            <li>
-              <a href="#" class="icon brands fa-dribbble"
-                ><span class="label">Dribbble</span></a
-              >
-            </li>
-            <li>
-              <a href="https://github.com/chalkgt" class="icon brands fa-github"
-                ><span class="label">GitHub</span></a
-              >
-            </li>
-            <li>
-              <a
-                href="mailto:freddygoh21@berkeley.edu"
-                class="icon solid fa-envelope"
-                ><span class="label">Email</span></a
-              >
-            </li>
-          </ul>
+           
         </footer>
       </div>
     </div>
     <script>
       window.onload = function () {
         document.body.classList.remove("is-preload");
+        typeWriter();
       };
       window.ontouchmove = function () {
         return false;
@@ -131,6 +84,23 @@
       window.onorientationchange = function () {
         document.body.scrollTop = 0;
       };
+
+      function typeWriter() {
+        const textElement = document.getElementById('typing-text');
+        const text = textElement.innerText;
+        textElement.innerText = '';
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerText += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+          }
+        }
+
+        type();
+      }
     </script>
   </body>
 </html>

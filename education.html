@@ -6,15 +6,39 @@
 -->
 <html>
   <head>
-    <title>Aerial by HTML5 UP</title>
+    <title>Education - Frederick Arne Goh</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+      <style>
+        .typing-animation {
+          font-family: monospace;
+          white-space: pre-wrap; /* Ensure text wraps and maintains line breaks */
+          overflow: hidden;
+          border-right: 0.15em solid orange;
+          display: inline-block;
+          animation: blink-caret 0.75s step-end infinite;
+        }
+  
+        @keyframes blink-caret {
+          from, to { border-color: transparent; }
+          50% { border-color: rgb(252, 252, 250); }
+        }
+  
+        .blue-box {
+          max-width: 1000px; /* Set a max-width for the text container */
+          margin: 0 auto; /* Center the container */
+          padding: 10px;
+          text-align: left; /* Align text to the left */
+        }
+  
+        h2 {
+          font-size: 2.5em; /* Increase the font size of the heading */
+        }
+      </style>
   </head>
   <body class="is-preload">
     <div id="wrapper">
@@ -24,7 +48,7 @@
         <!-- Top Navigation -->
         <nav id="top-nav">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="education.html">Education</a></li>
             <li><a href="experience.html">Experience</a></li>
@@ -38,7 +62,22 @@
         </nav>
 
         <!-- Header -->
-
+        <header id="header">
+          <header>
+            <h2>Education</h2>
+          </header>
+          <div class="blue-box">
+            <p class="typing-animation" id="typing-text">
+              <strong>University of California, Berkeley</strong><br>
+              Berkeley, CA<br>
+              B.A., Data Science<br>
+              May 2026<br>
+              <br>
+              <strong>Relevant Coursework:</strong><br>
+              Data Structures, Structure and Interpretation of Computer Programs, Principles and Techniques of Data Science, Engineering Statistics, Quality Control, and Forecasting, Linear Algebra
+            </p>
+          </div>
+        </header>
         <!-- Sections -->
 
         <!-- Footer -->
@@ -47,6 +86,7 @@
     <script>
       window.onload = function () {
         document.body.classList.remove("is-preload");
+        typeWriter();
       };
       window.ontouchmove = function () {
         return false;
@@ -55,15 +95,22 @@
         document.body.scrollTop = 0;
       };
 
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
+      function typeWriter() {
+        const textElement = document.getElementById('typing-text');
+        const text = textElement.innerText;
+        textElement.innerText = '';
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerText += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+          }
+        }
+
+        type();
+      }
     </script>
   </body>
 </html>
